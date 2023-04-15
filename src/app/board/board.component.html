@@ -1,0 +1,10 @@
+<div class="min-h-min min-w-min flex flex-row">
+    <div *ngFor="let row of rows" class="flex flex-col">
+      <div class="h-12 w-12 flex justify-center items-center" *ngFor="let col of cols" (click)="whenClicked(row, col, $event);" (contextmenu)="whenClicked(row, col, $event)" [ngClass]="colors[row][col].color">
+        <img class="w-10 h-10" [src]="'./assets/flag.png'" [@flagAnimation]="isFlagged[row][col] ? 'visible' : 'hidden'" />
+      </div>
+    </div>
+</div>
+<div>
+  {{ this.flags }}
+</div>
